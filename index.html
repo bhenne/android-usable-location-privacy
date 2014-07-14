@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Usable Location Privacy for Android" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Usable Location Privacy for Android</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+ 	  <img id="lpf_banner" src="images/ic_settings_locationprivacy.png" />
+ 	  <a id="forkme_banner" href="https://github.com/bhenne/android-usable-location-privacy">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Usable Location Privacy</h1>
+          <h2 id="project_tagline">An easy-to-use location privacy extension for Android</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/bhenne/android-usable-location-privacy/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/bhenne/android-usable-location-privacy/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      <h3>Usable Location Privacy for Android</h3>
+
+    <p>Location privacy settings of Android (at least up to 4.4 Kitkat) are limited to the option of disabling location use in general, while Apple iOS (since version 6) allows it on a per-app basis. When using location-based services, users always reveal their exact location even to apps that do not need it. Weather forecast apps as well as navigation apps get the most exact location a device can determine. 
+    Mobile privacy research focuses on the recognition and prevention of the disclosure of private data including location, but does not extend to privacy in use cases where <b>users do want to use/disclose their location</b>.
+    The increasing use of smartphones today entails an increasing use of location-based services as well. Users want to use these services, but have <b>privacy concerns</b>. As many location-based services do not require exact locations, user privacy can be increased by only disclosing location in such <b>detail as required for the respective service to function</b>. 
+
+    <p>The Usable Location Privacy extension for Android enables users to restrict the accuracy of revealed location data. Based on prior work and focus group studies' results the extension implements location obfuscation in an easy-to-use manner. Having control of location exactness allows its users to achieve the best possible privacy enhancement based on personal requirements. Unskilled users are supported in decision-making by a crowd-based service that shows what other users chose as level of location accurary for an app.</p>
+
+	<p>Features:</p>
+
+<ul>
+    <li>Adds location obfuscation to Android</li>
+    <li>Configuration of per-app accurary via pop-up dialog on first location use</li>
+    <li>Online obfuscation method: Geo-data based location mapping to street/district/region</li>
+    <li>Offline obfuscation method: Random location shifting with min/max distance</li>
+    <ul>
+        <li>Map-based configuration wizard to configure offline obfuscation distances</li>
+        <li>Learn values for offline obfuscation from past online obfuscations</li>
+    </ul>
+    <li>Implements crowd-based support for decisions about accurary</li>
+    <li>Location usage statistics show location usage behavior of each app</li>
+</ul>
+
+<p>The extension bases on the <a href="/android-location-privacy">Android Location Privacy Framework</a>.
+It was designed and built within research and education at the
+ Distributed Computing & Security Group,
+ Leibniz Universität Hannover, Germany 
+by Benjamin Henne and Christian Kater.
+</p>
+
+<h3>Screenshots</h3>
+<p>These screenshots show the interaction with the implemented features.</p>
+<img class="screenshot" src="images/Popup_NewsWeather_Community_nosel2.png" alt="Pop-up dialog asking for location accuracy" title="Pop-up dialog asking for location accuracy">
+<img class="screenshot" src="images/AppOverview.png" alt="Settings: App overview" title="Settings: App overview">
+<img class="screenshot" src="images/Screenshot_2014-07-13-22-08-27.png" alt="Advanced Settings" title="Advanced Settings">
+<img class="screenshot" src="images/Screenshot_2014-07-13-22-08-41.png" alt="Online/Offline mode information" title="Online/Offline mode information">
+<img class="screenshot" src="images/Screenshot_2014-07-13-22-09-18.png" alt="Setup offline obfuscation" title="Setup offline obfuscation">
+<img class="screenshot" src="images/Screenshot_2014-07-13-22-10-01.png" alt="Offline mode configuration via wizard: city size" title="Offline mode configuration via wizard: city size">
+<img class="screenshot" src="images/Screenshot_2014-06-27-12-03-49.png" alt="Location usage statistics: main view" title="Location usage statistics: main view">
+<img class="screenshot" src="images/Stats2.png" alt="Location usage statistics: app details" title="Location usage statistics: app details">
+
+<h3>Publications</h3>
+<ol id="pubs">
+    <li>B. Henne, C. Kater, M. Smith: On Usable Location Privacy for Android with Crowd-Recommendations. In Trust and Trustworthy Computing, 7th International Conference, TRUST 2014, Heraklion, Crete, June 30 – July 2, 2014, Lecture Notes in Computer Science vol. 8564, Springer International Publishing. (<a href="http://dx.doi.org/10.1007/978-3-319-08593-7_5">paper</a>|<a href="pdfs/trust14-usable-location-privacy-android-henne.pdf">slides</a>)</li>
+</ol>
+
+<h3>Support or Contact</h3>
+
+<p>Feel free to contact <a href="https://github.com/bhenne" class="user-mention">@bhenne</a>.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Usable Location Privacy for Android published by <a href="https://github.com/bhenne">bhenne</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
