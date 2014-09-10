@@ -1,0 +1,87 @@
+= Usable Location Privacy for Android =
+
+An easy-to-use location privacy extension for Android
+ * Adds location obfuscation to Android
+   * Configuration of per-app accurary via pop-up dialog on first location use
+   * Online method: Geo-data based location mapping to street/district/region
+   * Offline method: Random location shifting with min/max distance
+     * Map-based configuration wizard to configure distances
+     * Learn values from online mode
+   * Implements crowd-based support for decisions about accurary
+ * Location usage statistics show location usage behavior of each app
+
+The extension bases on the Android Location Privacy Framework.
+It was designed and built within research and education at the
+ Distributed Computing & Security Group
+ Leibniz Universität Hannover, Germany
+by Benjamin Henne and Christian Kater.
+
+http://www.dcsec.uni-hannover.de/
+henne@dcsec.uni-hannover.de
+
+
+== Prerequisites ==
+
+A complete CyanogenMod build environment.
+
+
+== Setup ==
+
+You need to obtain your own free MapQuest API AppKey first
+ -> http://developer.mapquest.com/
+
+If you received your AppKey, insert it into 
+ packages/apps/Settings/res/layout/locationprivacy_coordinate.xml
+
+    <com.mapquest.android.maps.MapView
+        android:id="@+id/lp_mappicker_map"
+        ...
+        android:apiKey="INSERTYOURAPIKEYHERE"  <-- here
+        ... />
+
+You can change default configuration in
+ frameworks/base/locationprivacy/java/android/locationprivacy/control/LocationPrivacyManager.java
+
+
+== Build ==
+
+Create patch for CyanogenMod 10.1 including local changes/setup
+ cd $THISGITREPO
+ git diff --patch --no-prefix fdf29e35a944c21476201e03fa39d25a385064fe -- build/ frameworks/ packages/ >cm10.1-ulpa.patch
+
+Build -- exemplarily for mako
+ mkdir $BASE/cm10.1
+ cd $BASE/cm10.1
+ repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1
+ repo sync
+ cd vendor/cm
+ ./get-prebuilts
+ cd ../..
+ source build/envsetup.sh
+ export PATH=`pwd`/.repo/repo:$PATH
+ breakfast mako
+
+ # connect device running original CyanogenMod 10.1 with usb debugging enabled
+ cd device/lge/mako
+ ./extract-files.sh
+
+ # apply patch
+ cd $BASE/cm10.1
+ patch -p0 < $THISGITREPO/cm10.1-ulpa.patch 
+ # copy additional files
+ cd $THISGITREPO
+ ./cp.sh $BASE/cm10.1
+ 
+ # Build
+ cd $BASE/cm10.1
+ brunch mako
+
+
+== Dependencies ==
+
+* The extension includes the GraphView library, which is licensed unter GNU LGPL.
+  https://github.com/jjoe64/GraphView/
+* The MapQuest Android SDK is used to display maps.
+  http://developer.mapquest.com/web/products/featured/android-maps-api
+* Google Play Services' OAuth is used to differentiate users of the crowd-service.
+
