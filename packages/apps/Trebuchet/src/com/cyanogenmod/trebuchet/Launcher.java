@@ -17,6 +17,7 @@
 
 package com.cyanogenmod.trebuchet;
 
+import android.locationprivacy.control.LocationPrivacyManager;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.animation.Animator;
@@ -355,6 +356,10 @@ public final class Launcher extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	Intent i = new Intent(
+				"com.android.server.LocationManagerService.start");
+		this.sendBroadcast(i);
+        Log.i(TAG, "bootComplete");
         if (DEBUG_STRICT_MODE) {
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                     .detectDiskReads()

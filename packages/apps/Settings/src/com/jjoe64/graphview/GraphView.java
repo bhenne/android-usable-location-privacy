@@ -80,7 +80,7 @@ abstract public class GraphView extends LinearLayout {
 			// normal
 			paint.setStrokeWidth(0);
 
-			float border = GraphViewConfig.BORDER;
+			float border = getBorder();
 			float horstart = 0;
 			float height = getHeight();
 			float width = getWidth() - 1;
@@ -126,7 +126,10 @@ abstract public class GraphView extends LinearLayout {
 
             paint.setColor(graphViewStyle.getHorizontalLabelsColor());
 			paint.setTextAlign(Align.CENTER);
-			canvas.drawText(title, (graphwidth / 2) + horstart, border - 4, paint);
+			paint.setTextSize(getGraphViewStyle().getTextSize() + 10);
+			canvas.drawText(title, (graphwidth / 2) + horstart, border / 2 - 4, paint);
+			paint.setTextSize(getGraphViewStyle().getTextSize());
+
 
 			if (maxY == minY) {
 				// if min/max is the same, fake it so that we can render a line
@@ -281,7 +284,7 @@ abstract public class GraphView extends LinearLayout {
 						getGraphViewStyle().getVerticalLabelsWidth(), LayoutParams.FILL_PARENT));
 			}
 
-			float border = GraphViewConfig.BORDER;
+			float border = getBorder();
 			border += labelTextHeight;
 			float height = getHeight();
 			float graphheight = height - (2 * border);
@@ -1024,5 +1027,8 @@ abstract public class GraphView extends LinearLayout {
     public boolean getShowVerticalLabels() {
         return showVerticalLabels;
     }
-
+    
+    public float getBorder() {
+        return GraphViewConfig.BORDER;
+    }
 }

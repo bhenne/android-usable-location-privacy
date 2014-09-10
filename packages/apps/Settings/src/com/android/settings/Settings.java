@@ -1,6 +1,11 @@
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
+ * Usable Location Privacy Extension
+ *  Copyright (C) 2014 B. Henne, C. Kater,
+ *    Distributed Computing & Security Group,
+ *    Leibniz Universitaet Hannover, Germany
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at

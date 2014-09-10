@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Presets -->
+    <string-array name="preconfigs">
+        <item>Exact</item>
+        <item>Street-level</item>
+        <item>District-level</item>
+        <item>City-level</item>
+        <item>None</item>
+        <item>Unset</item>
+    </string-array>
+    <string-array name="preconfigs_short">
+        <item>Exactly</item>
+        <item>Street</item>
+        <item>District</item>
+        <item>City</item>
+        <item>None</item>
+        <item>Unset</item>
+    </string-array>
+
+    <!-- Settings -->
+    <string name="lp_settings_google_play_service">To use Share your Settings install Google Play Services</string>
+    <!-- Advanced Settings -->
+    <string name="lp_settings_advanced_settings">Advanced Settings</string>
+    <string name="lp_settings_advanced_appcategory">Apps with location access</string>
+    <string name="lp_settings_advanced_useonlinealgorithm">Allow Online Service use</string>
+    <string name="lp_settings_advanced_useonlinealgorithm_summary">Use map service to obfuscate your location.</string>
+    <string name="lp_settings_advanced_shareprivacyaettings">Share your Settings</string>
+    <string name="lp_settings_advanced_shareprivacyaettings_summary">Anonymously share your settings with others in the crowd.</string>
+    <string name="lp_settings_advanced_showcommunityadvice">Show Settings of other Users</string>
+    <string name="lp_settings_advanced_showcommunityadvice_summary">Display most often used setting from the crowd to support own selection.</string>
+    <string name="lp_settings_advanced_setofflinepreset">Setup offline obfuscation</string>
+    <string name="lp_settings_advanced_reset">Reset Settings (Factory defaults)</string>
+    <string name="lp_settings_advanced_reset_warning_title">Reset Settings (Factory defaults)</string>
+    <string name="lp_settings_advanced_reset_warning">Do you really want to reset all location privacy settings to factory defaults?</string>
+    <string name="lp_settings_advanced_webservice">Crowd Webservice</string>
+    <string name="lp_settings_advanced_webservice_summary">Host Address for the crowd webservice</string>
+    <string name="lp_settings_advanced_webservice_toast">New webservice activated</string>
+    <string name="lp_settings_advanced_stars">Show Stars in Dialog</string>
+    <string name="lp_settings_advanced_stars_sum">Either show stars or show text in the dialog as recommendation.</string>
+    <string name="lp_settings_advanced_obfuscation">Obfuscation</string>
+    <string name="lp_settings_advanced_dialog">Dialog</string>
+    <string name="lp_settings_advanced_expert">Expert</string>
+
+    <!-- offline parameter -->
+    <string name="lp_street_offline">Street-level</string>
+    <string name="lp_postalcode_offline">District-level</string>
+    <string name="lp_city_offline">City-level</string>
+    <string name="lp_street_offline_summary">Maximum of random value added to real location for street-level obfuscation</string>
+    <string name="lp_postalcode_offline_summary">Maximum of random value added to real location for district-level obfuscation</string>
+    <string name="lp_city_offline_summary">Maximum of random value added to real location for city-level obfuscation</string>
+    <string name="lp_city_mappicker">Offline Configuration Wizard</string>
+    <string name="lp_city_mappicker_summary">Visually setup values using a map of a representative city</string>
+    <string name="lp_offline_min">Minimal Obfuscation</string>
+    <string name="lp_offline_min_summary">Minimum of random value added to real location</string>
+
+    <!-- Difference Online Offline -->
+    <string name="lp_settings_onlineinfo_title">Difference Online/Offline mode</string>
+    <string name="lp_settings_onlineinfo_top"> If online service is allowed and used, an app gets the location of the center of the street, district or city next to your real location. In offline mode, a random value in configured range is added to real location.</string>
+    <string name="lp_settings_onlineinfo_bot">The advantage of the online mode is a dynamic obfuscation depend on where you actually are. However, the geo webservice of Google gets to know where you are while others do not. The offline mode keeps your real location on the device, but you have to set up the boundaries for random values added to real location. </string>
+    <string name="lp_settings_onlineinfo_offline">Offline</string>
+    <string name="lp_settings_onlineinfo_online">Online</string>
+    <string name="lp_settings_onlineinfo_position">Location</string>
+    <string name="lp_settings_onlineinfo_fakeposition">Fake Location</string>
+
+    <!-- Statistic -->
+    <string name="lp_settings_statistic">Statistics</string>
+    <string name="lp_settings_statistic_na">N.A.</string>
+    <string name="lp_settings_statistic_lastaccess">Last Access:</string>
+    <string name="lp_settings_statistic_deviation">Mean Obfuscation Deviation:</string>
+    <string name="lp_settings_statistic_lastsevendays">Last 7 Days:</string>
+    <string name="lp_settings_statistic_lastmonth">Last 28 Days: </string>
+    <string name="lp_settings_statistic_acces_lastmonth">Location access in the last 28 days</string>
+    <string name="lp_settings_statistic_acces_last24h">Location access in the last 24 hours</string>
+
+    <!-- LPDialog -->
+    <string name="lp_dialog_intro">wants to use to your current location. How imprecise should it be?</string>
+    <string name="lp_dialog_comumnity">Community:</string>
+    <string name="lp_dialog_community_value">chose</string>
+    <string name="lp_dialog_title">App requests Location</string>
+    <string name="lp_dialog_warning">Please choose the allowed accurancy of location access. This window will show again when the app tries to access your location the next time. Until making your choice the app will get no access to your location.</string>
+    <string name="lp_dialog_get_from_webservice">Retrieving recommendations</string>
+    <string name="lp_dialog_error">An error has occured when retrieving recommendations. Maybe you are not connected to the Internet.</string>
+    <string name="lp_dialog_stars">The more stars an option has, the more people chose that option.</string>
+    <string name="lp_dialog_user_choice">Other people chose:</string>
+    <string name="lp_dialog_user_choice_no_recommendation">No recommendation available for this app.</string>
+
+    <!-- Notifications -->
+    <string name="lp_notification_title">Location Privacy Settings</string>
+    <string name="lp_notification_">One or more Apps have no location privacy settings</string>
+
+    <!-- Mappicker -->
+    <string name="lp_mappicker_title">Mappicker</string>
+    <string name="lp_mappicker_infotext_mindistance">Please specify the minimal distance you want to ensure being between your real and the obfuscate location when using street, district or city-level obfuscation.</string>
+    <string name="lp_mappicker_infotext0">Please search for a representative city you might often stay at.</string>
+    <string name="lp_mappicker_searchhint">Enter city name here</string>
+    <string name="lp_mappicker_infotext1">Select a location near city boundaries by clicking on the map.</string>
+    <string name="lp_mappicker_infotext2">Imagine you are the red point in the midle of the map. Please select a location as far away from you as you would think this is still in your district/village.</string>
+    <string name="lp_mappicker_infotext3">You are in the middle of the street. Please select the end of the street. If the street is very short or very long pick a place somewhere after or before its end.</string>
+    <string name="lp_mappicker_badinput">The city was not found. Please choose another one.</string>
+    <string name="lp_mappicker_error">An error has occured. Please check your Internet connection.</string>
+    <string name="lp_mappicker_next">Next</string>
+    <string name="lp_mappicker_back">Back</string>
+    <string name="lp_mappicker_choose">Back</string>
+    <string name="lp_mappicker_retry">Retry</string>
+    <string name="lp_mappicker_result">These settings were calculated based on your selections. You may re-run the wizard (with another city) or manually change values if you do not agree with them.</string>
+
+    <!-- Webservice -->
+    <string name="lp_webservice_notification_title">Location Privacy Webservice</string>
+    <string name="lp_webservice_error">An error occured. Please check the webservice URL and your Internet connection.</string>
+    <string name="lp_webservice_share">Webservice supports sharing your settings with others only. It provides no recommendations by others.</string>
+    <string name="lp_webservice_nothing">Webservice neither supports recommendations by others nor sharing your settings with others.</string>
+    <string name="lp_webservice_show">Webservice supports recommendations by others only. It does not allow sharing your settings with others.</string>
+    <string name="lp_webservice_both">Webservice supports recommendations by others and sharing your settings with others.</string>
+
+    <!-- Colors -->
+    <color name="transparentdark">#cc000000</color>
+    <color name="grey">#C0C0C0</color>
+
+    <string name="title_activity_dialog">DialogActivity</string>
+    <string name="lp_app_title">Location Privacy</string>
+    <string name="lp_title">Location Privacy</string>
+    
+    <string name="lp_menu_order_apps">Order Apps by</string>
+    <string name="lp_menu_order_stat">Order Statistic by</string>
+    
+    <string name="lp_menu_label">Name</string>
+    <string name="lp_menu_last_access">Last Access</string>
+    <string name="lp_menu_precision">Set Obfuscation Level</string>
+    <string name="lp_menu_number_access_28_days">Access count (28 days)</string>
+
+
+
+
+    <string name="lp_settings_advanced_use_recorded_values">Use values from online obfuscsation</string>
+    <string name="lp_settings_advanced_use_recorded_values_summary">Use mean deviation from past online obfuscation.</string>
+    <string name="lp_settings_advanced_use_recorded_values_dialog_summary">Do you want to use the following values?</string>
+
+
+
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/lp_settings_advanced_setofflinepreset" >
+    
+    <Preference
+    android:key="lp_settings_advanced_use_recorded_values"
+    android:summary="@string/lp_settings_advanced_use_recorded_values_summary"
+    android:title="@string/lp_settings_advanced_use_recorded_values" />
+    
+    <Preference
+        android:key="lp_settings_advanced_setpreset_mappicker"
+        android:summary="@string/lp_city_mappicker_summary"
+        android:title="@string/lp_city_mappicker" />
+               
+    <EditTextPreference
+        android:key="lp_settings_advanced_setpreset_street"
+        android:summary="@string/lp_street_offline_summary"
+        android:title="@string/lp_street_offline" />
+    <EditTextPreference
+        android:key="lp_settings_advanced_setpreset_postalcode"
+        android:summary="@string/lp_postalcode_offline_summary"
+        android:title="@string/lp_postalcode_offline" />
+     <EditTextPreference
+        android:key="lp_settings_advanced_setpreset_city"
+        android:summary="@string/lp_city_offline_summary"
+        android:title="@string/lp_city_offline" />
+     <EditTextPreference
+        android:key="lp_settings_advanced_setpreset_min"
+        android:summary="@string/lp_offline_min_summary"
+        android:title="@string/lp_offline_min" />
+        
+</PreferenceScreen>
+
+

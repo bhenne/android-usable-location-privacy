@@ -175,6 +175,13 @@
         android:title="@string/location_settings_title"
         android:id="@+id/location_settings" />
 
+    <!-- Location Privacy-->
+    <header
+        android:fragment="com.android.settings.locationprivacy.LocationPrivacySettings"
+        android:icon="@drawable/ic_settings_locationprivacy"
+        android:title="@string/lp_title"
+        android:id="@+id/lp_settings" />
+
     <!-- Security -->
     <header
         android:fragment="com.android.settings.SecuritySettings"

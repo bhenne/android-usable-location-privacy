@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- menu group -->
+    <item android:id="@+id/lp_menu_order_apps" android:title="@string/lp_menu_order_apps">
+        <menu>
+            <group android:id="@+id/lp_menu_group_app">
+                <item android:id="@+id/lp_menu_label_app" android:title="@string/lp_menu_label"/>
+                <item android:id="@+id/lp_menu_last_access_app" android:title="@string/lp_menu_last_access"/>
+                <item android:id="@+id/lp_menu_precision_app" android:title="@string/lp_menu_precision"/>
+                <item android:id="@+id/lp_menu_number_access_28_days_app" android:title="@string/lp_menu_number_access_28_days"/>
+            </group>
+        </menu>
+    </item>
+</menu>

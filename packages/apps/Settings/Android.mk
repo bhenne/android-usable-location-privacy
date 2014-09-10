@@ -2,7 +2,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_JAVA_LIBRARIES := bouncycastle telephony-common
-LOCAL_STATIC_JAVA_LIBRARIES := guava android-support-v4 jsr305 libGoogleAnalyticsV2
+LOCAL_STATIC_JAVA_LIBRARIES := guava android-support-v4 jsr305 libGoogleAnalyticsV2 libgps libmapquest
 
 LOCAL_MODULE_TAGS := optional
 
@@ -20,6 +20,11 @@ LOCAL_SRC_FILES += $(call all-java-files-under,../../../external/koush/Superuser
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res $(LOCAL_PATH)/../../../external/koush/Widgets/Widgets/res $(LOCAL_PATH)/../../../external/koush/Superuser/Superuser/res
 
 include $(BUILD_PACKAGE)
+
+include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := libgps:google-play-services.jar libmapquest:mapquest-android-sdk-1.0.5.jar
+include $(BUILD_MULTI_PREBUILT)
 
 # Use the folloing include to make our test apk.
 include $(call all-makefiles-under,$(LOCAL_PATH))

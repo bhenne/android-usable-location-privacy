@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/lp_mappicker_infotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="@string/lp_mappicker_infotext_mindistance" />
+    
+    <AutoCompleteTextView
+        android:id="@+id/lp_mappicker_searchaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lp_mappicker_infotext"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/lp_mappicker_submitsearch"
+        android:ems="10"
+        android:hint="@string/lp_mappicker_searchhint"
+        android:inputType="textPostalAddress"
+        android:visibility="gone" >
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <ImageButton
+        android:id="@+id/lp_mappicker_submitsearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lp_mappicker_searchaddress"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:visibility="gone" />
+
+    <com.mapquest.android.maps.MapView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/lp_mappicker_map"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lp_mappicker_bot_border"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lp_mappicker_searchaddress"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:apiKey="INSERTYOURAPIKEYHERE"
+        android:clickable="true"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/lp_mappicker_bot_border"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_above="@+id/lp_mappicker_buttonlayer"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/grey" />
+
+    <LinearLayout
+        android:id="@+id/lp_mappicker_buttonlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/lp_mappicker_cancel"
+            style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@android:string/cancel" />
+
+        <View
+            android:id="@+id/lp_mappicker_vertical"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            />
+
+        <Button
+            android:id="@+id/lp_mappicker_ok"
+            style="@android:style/Widget.Holo.Light.Button.Borderless.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="true"
+            android:text="@string/lp_mappicker_next" />
+
+    </LinearLayout>
+
+    <NumberPicker
+        android:id="@+id/np"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lp_mappicker_infotext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:width="200dip" />
+
+    <Button
+        android:id="@+id/lp_mapppicker_retry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lp_mappicker_infotext"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="@string/lp_mappicker_retry"
+        android:visibility="gone" />
+
+</RelativeLayout>

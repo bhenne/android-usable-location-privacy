@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- menu group -->
+  
+    <item android:id="@+id/lp_menu_order_stat" android:title="@string/lp_menu_order_stat">
+        <menu>
+            <group android:id="@+id/lp_menu_group_stat">
+                <item android:id="@+id/lp_menu_label_stat" android:title="@string/lp_menu_label"/>
+                <item android:id="@+id/lp_menu_last_access_stat" android:title="@string/lp_menu_last_access"/>
+                <item android:id="@+id/lp_menu_number_access_28_days_stat" android:title="@string/lp_menu_number_access_28_days"/>
+
+            </group>
+        </menu>
+    </item>
+
+</menu>

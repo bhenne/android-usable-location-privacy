@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Presets -->
+    <string-array name="preconfigs">
+        <item>Genau</item>
+        <item>Straße</item>
+        <item>Stadtteil</item>
+        <item>Stadt</item>
+        <item>Aus</item>
+        <item>ToDo</item>
+    </string-array>
+    <string-array name="preconfigs_short">
+        <item>Genau</item>
+        <item>Straße</item>
+        <item>Stadtteil</item>
+        <item>Stadt</item>
+        <item>Aus</item>
+        <item>ToDo</item>
+    </string-array>
+
+    <!-- Settings -->
+    <string name="lp_settings_google_play_service">Um Gewählten Einstellungen teilen benutzen zu können, müssen Sie Google Play Services installieren.</string>
+
+    <!-- Advanced Settings -->
+    <string name="lp_settings_advanced_settings">Erweiterte Einstellungen</string>
+    <string name="lp_settings_advanced_appcategory">Apps mit Standortzugriff</string>
+    <string name="lp_settings_advanced_useonlinealgorithm">Kartendienst benutzen</string>
+    <string name="lp_settings_advanced_useonlinealgorithm_summary">Erlaube einen Kartendienst im Web zum Verschleiern deines Standorts zu benutzen.</string>
+    <string name="lp_settings_advanced_shareprivacyaettings">Eigene Einstellungen teilen</string>
+    <string name="lp_settings_advanced_shareprivacyaettings_summary">Gewählte Einstellung einer App anderen anonym zur Verfügung stellen.</string>
+    <string name="lp_settings_advanced_showcommunityadvice">Zeige Einstellung anderer</string>
+    <string name="lp_settings_advanced_showcommunityadvice_summary">Zeige die meistgewählten Einstellungen anderer Nutzer für eine App an.</string>
+    <string name="lp_settings_advanced_setofflinepreset">Einstellungen für lokale Verschleierung</string>
+    <string name="lp_settings_advanced_reset">Auf Werkseinstellungen zurücksetzen</string>
+    <string name="lp_settings_advanced_reset_warning_title">Werkseinstellungen</string>
+    <string name="lp_settings_advanced_reset_warning">Möchten Sie wirklich die Standortprivatsphäre-Einstellungen auf die Werkseinstellungen zurücksetzen?</string>
+    <string name="lp_settings_advanced_webservice">Crowd-Webdienst</string>
+    <string name="lp_settings_advanced_webservice_summary">Web-Adresse des Crowd-Webdienstes zum Teilen und Empfangen von Einstellungen</string>
+    <string name="lp_settings_advanced_webservice_toast">Neuer Webdienst aktiviert</string>
+    <string name="lp_settings_advanced_stars">Sterne im Dialog</string>
+    <string name="lp_settings_advanced_stars_sum">Zeige Einstellungen anderer mit Bewertungssternen statt als Text.</string>
+    <string name="lp_settings_advanced_obfuscation">Verschleierung</string>
+    <string name="lp_settings_advanced_dialog">Dialog</string>
+    <string name="lp_settings_advanced_expert">Experteneinstellungen</string>
+
+    <!-- offline parameter -->
+    <string name="lp_street_offline">Straße</string>
+    <string name="lp_postalcode_offline">Stadtteil</string>
+    <string name="lp_city_offline">Stadt</string>
+    <string name="lp_street_offline_summary">Maximaler Entfernung um die der echte Standort bei der Einstellung Straße verändert wird.</string>
+    <string name="lp_postalcode_offline_summary">Maximaler Entfernung um die der echte Standort bei der Einstellung Stadtteil verändert wird.</string>
+    <string name="lp_city_offline_summary">Maximaler Entfernung um die der echte Standort bei der Einstellung Stadt verändert wird.</string>
+    <string name="lp_city_mappicker">Werte auf Landkarte festlegen</string>
+    <string name="lp_city_mappicker_summary">Maximalwerte interkativ mit einer Karte bestimmen.</string>
+    <string name="lp_offline_min">Minimale Distanz</string>
+    <string name="lp_offline_min_summary">Mindestentfernung um die der echte Standort verändert wird.</string>
+
+    <!-- Difference Online Offline -->
+    <string name="lp_settings_onlineinfo_title">Unterschied Kartendienst/lokal</string>
+    <string name="lp_settings_onlineinfo_top">Durch den Kartendienst wird die nächstgelegene Straßen-, Stadtteil- oder Stadtmitte als Standort verwendet. Bei lokal wird ein zufälliger Ort in der Nähe des wirklichen Standort verwendet. </string>
+    <string name="lp_settings_onlineinfo_bot">Der Kartendienst gibt realitischere verfälschte Orte an. Es muss jedoch ein Webdienst genutzt werden, der somit den wahren Standort erfährt. Die lokale Methode behält den Standort auf dem Gerät. Einmalig müssen Einstellungen für die zufälligen Entfernungen festgelegt werden. </string>
+    <string name="lp_settings_onlineinfo_offline">Lokal</string>
+    <string name="lp_settings_onlineinfo_online">Kartendienst</string>
+    <string name="lp_settings_onlineinfo_position">Standort</string>
+    <string name="lp_settings_onlineinfo_fakeposition">Vorgegebener Standort</string>
+    <string name="lp_dialog_get_from_webservice">Lade Einstellungen anderer vom Webservice.</string>
+
+    <!-- LPDialog -->
+    <string name="lp_dialog_intro">möchte auf ihren Standort zugreifen. Wie genau soll der Standort preisgegeben werden?</string>
+    <string name="lp_dialog_comumnity">Community:</string>
+    <string name="lp_dialog_community_value">wählten</string>
+    <string name="lp_dialog_title">Standortfreigabe</string>
+    <string name="lp_dialog_warning">Bitte wähle die Genauigkeit deines Standorts für diese App. Dieser Dialog erscheint erneut, sobald die App wieder versucht auf deinen Standort zuzugreifen, bis du eine Einstellung gewählt hast.</string>
+    <string name="lp_dialog_stars">Je mehr Sterne, desto mehr Benutzer wählten eine Einstellung.</string>
+    <string name="lp_dialog_user_choice">Andere Benutzer wählten: </string>
+    <string name="lp_dialog_user_choice_no_recommendation">Keine Einstelungen anderer verfügbar</string>
+    <string name="lp_dialog_error">Ein Fehler ist aufgetreten. Du kannst eine Auswahl treffen, bekommst jedoch keine Informationen zu Einstellungen anderer. Prüfe deine Internetverbindung oder versuche es noch einmal. Wurde der Crowd-Webdienst korrekt konfiguriert?</string>
+    <string name="title_activity_dialog">Dialog</string>
+
+    <color name="grey">#C0C0C0</color>
+
+    <!-- Statistic -->
+    <string name="lp_settings_statistic">Statistik</string>
+    <string name="lp_settings_statistic_lastaccess">Letzter Zugriff:</string>
+    <string name="lp_settings_statistic_deviation">Durchschn. Abweichung:</string>
+    <string name="lp_settings_statistic_lastsevendays">Letzte 7 Tage:</string>
+    <string name="lp_settings_statistic_lastmonth">Letzte 28 Tage:</string>
+    <string name="lp_settings_statistic_acces_lastmonth">Standortzugriffe der letzten 28 Tage</string>
+    <string name="lp_settings_statistic_acces_last24h">Standortzugriffe der letzten 24 Stunden</string>
+    <string name="lp_settings_statistic_na">n.v.</string>
+
+    <!-- Notifications -->
+    <string name="lp_notification_title">Standortprivatsphäre</string>
+    <string name="lp_notification_">Für mindestens eine App sind die Einstellungen zur Standortprivatsphäre noch nicht gesetzt.</string>
+
+    <!-- Mappicker -->
+    <string name="lp_mappicker_title">Kartenauswahl</string>
+    <string name="lp_mappicker_infotext_mindistance">Bitte gib die minimale Entfernung zwischen deinem echten und dem verschleierten Standort an. Dieser Mindestabstand gilt für für Straße, Stadtteil und Stadt.</string>
+    <string name="lp_mappicker_infotext0">Bitte wähle eine Stadt in der du oft bist.</string>
+    <string name="lp_mappicker_searchhint">Name der Stadt</string>
+    <string name="lp_mappicker_infotext1">Bitte wähle einen Ort nahe der Stadtgrenze.</string>
+    <string name="lp_mappicker_infotext2">Du bist in der Mitte der Karte am roten Punkt. Wähle einen Punkt, von dem du meinst, dass er noch im selben Stadtteil ist.</string>
+    <string name="lp_mappicker_infotext3">Du bist in der Mitte der Straße. Wähle ein Ende der Straße. Wenn die Straße besonders kurz oder lang ist, setze die Markierung so, dass es ungefähr der Länge der umgebenden Straßen entspricht.</string>
+    <string name="lp_mappicker_badinput">Die eingegebene Stadt wurde nicht gefunden. Bitte gib einen anderen Namen ein.</string>
+    <string name="lp_mappicker_error">Ein Fehler ist aufgetreten. Überprüfe deine Internetverbindung.</string>
+    <string name="lp_mappicker_next">Weiter</string>
+    <string name="lp_mappicker_back">Zurück</string>
+    <string name="lp_mappicker_choose">Zurück</string>
+    <string name="lp_mappicker_retry">Erneut versuchen</string>
+    <string name="lp_mappicker_result">Es wurden folgende Einstellungen ermittelt: </string>
+
+    <!-- Webservice -->
+    <string name="lp_webservice_error">Ein Fehler ist aufgetreten. Bitte überprüfe die eingegebene Adresse und die Internetverbindung.</string>
+    <string name="lp_webservice_show">Nur Einstellungen anderen teilen ist verfügbar.</string>
+    <string name="lp_webservice_nothing">Weder Einstellungen teilen noch Einstellungen anderer anzeigen ist verfügbar.</string>
+    <string name="lp_webservice_share">Nur das Anzeigen der Einstellungen anderer ist verfügbar.</string>
+    <string name="lp_webservice_both">Eigene Einstellungen teilen und das Anzeigen der Einstellungen anderer sind verfügbar.</string>
+    <string name="lp_webservice_notification_title">Standortprivatsphäre-Webservice</string>
+    
+    <string name="lp_app_title">Standortprivatsphäre</string>
+    <string name="lp_title">Standortprivatsphäre</string>
+    
+    <string name="lp_menu_order_apps">Ordne Apps nach</string>
+    <string name="lp_menu_order_stat">Ordne Statistik nach</string>
+    
+    <string name="lp_menu_label">Name</string>
+    <string name="lp_menu_last_access">Letzte Standortnutzung</string>
+    <string name="lp_menu_precision">eingestellter Genauigkeit</string>
+    <string name="lp_menu_number_access_28_days">Zugriffsanzahl (letzte 28 Tage)</string>
+
+
+    <string name="lp_settings_advanced_use_recorded_values">Werte aus Kartendienst-Verschleierung</string>
+    <string name="lp_settings_advanced_use_recorded_values_summary">Mittelwerte der bisher verwendeten Kartendienst-Verschleierung verwenden.</string>
+    <string name="lp_settings_advanced_use_recorded_values_dialog_summary">Möchtest du folgende Werte übernehmen?</string>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/lp_settings_advanced_settings" >
+        
+        <PreferenceCategory android:title="@string/lp_settings_advanced_obfuscation" >
+        </PreferenceCategory>
+
+        <CheckBoxPreference
+            android:disableDependentsState="true"
+            android:key="lp_settings_advanced_useonlinealgorithm"
+            android:summary="@string/lp_settings_advanced_useonlinealgorithm_summary"
+            android:title="@string/lp_settings_advanced_useonlinealgorithm" />
+        <PreferenceScreen
+                android:dependency="lp_settings_advanced_useonlinealgorithm"
+                android:fragment="com.android.settings.locationprivacy.LocationPrivacyOfflineObfuscation"
+                android:title="@string/lp_settings_advanced_setofflinepreset" >
+                
+        </PreferenceScreen>
+
+        <PreferenceCategory xmlns:android="http://schemas.android.com/apk/res/android"
+            android:title="@string/lp_settings_advanced_dialog" >
+        </PreferenceCategory>
+
+        <CheckBoxPreference
+            android:key="lp_settings_advanced_shareprivacyaettings"
+            android:summary="@string/lp_settings_advanced_shareprivacyaettings_summary"
+            android:title="@string/lp_settings_advanced_shareprivacyaettings" />
+        <CheckBoxPreference
+            android:key="lp_settings_advanced_showcommunityadvice"
+            android:summary="@string/lp_settings_advanced_showcommunityadvice_summary"
+            android:title="@string/lp_settings_advanced_showcommunityadvice" />
+        <CheckBoxPreference
+            android:key="lp_settings_advanced_stars"
+            android:summary="@string/lp_settings_advanced_stars_sum"
+            android:title="@string/lp_settings_advanced_stars" />
+
+        <PreferenceCategory android:title="@string/lp_settings_advanced_expert" >
+        </PreferenceCategory>
+
+        <EditTextPreference
+            android:key="lp_settings_advanced_webservice"
+            android:summary="@string/lp_settings_advanced_webservice_summary"
+            android:title="@string/lp_settings_advanced_webservice" />
+
+        <Preference
+            android:key="lp_settings_advanced_reset"
+            android:title="@string/lp_settings_advanced_reset" />
+    </PreferenceScreen>
+

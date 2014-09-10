@@ -1,6 +1,11 @@
 /*
  * Copyright (C) 2007 The Android Open Source Project
  *
+ * Usable Location Privacy Extension
+ *  Copyright (C) 2014 B. Henne, C. Kater,
+ *    Distributed Computing & Security Group,
+ *    Leibniz Universitaet Hannover, Germany
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,6 +48,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.location.LocationRequest;
+import android.locationprivacy.control.LocationPrivacyManager;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.Handler;
@@ -182,12 +188,33 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
     // current active user on the device - other users are denied location data
     private int mCurrentUserId = UserHandle.USER_OWNER;
 
+    // the LocationPrivacyManager for location obfuscation
+    private LocationPrivacyManager locationPrivacyManager;
+
+    /// Receive broadcast notification that location privacy settings changed
+    BroadcastReceiver LPFBReciever = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+        	if("com.android.server.LocationManagerService.start".equals(intent.getAction())){
+        		locationPrivacyManager.setBootComplete();
+        	} else if(intent.getBooleanExtra("checkForDialog", false)){
+        		locationPrivacyManager.checkForDialog();
+        	} else {
+                locationPrivacyManager.updateData();
+
+        	}
+        }
+    };
+
     public LocationManagerService(Context context) {
         super();
         mContext = context;
 
         if (D) Log.d(TAG, "Constructed");
 
+        locationPrivacyManager = new LocationPrivacyManager(mContext);
+        mContext.registerReceiver(LPFBReciever, new IntentFilter("com.android.server.LocationManagerService.locationprivacy"));
+        mContext.registerReceiver(LPFBReciever, new IntentFilter("com.android.server.LocationManagerService.start"));
         // most startup is deferred until systemReady()
     }
 
@@ -526,22 +553,39 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
         }
 
         public boolean callLocationChangedLocked(Location location) {
+        	//TODO: mPackageName and packagename sometimes differ - select wisely
+        	
+        	//e.g.: mUid 10071 menion.android.locus menion.android.locus OK, but
+        	//but:  mUid 1000 android com.cyanogenmod.settings.device
+        	int uid = mUid;
+        	String packageName = mPackageName;
+        	System.out.println("mUid "+mUid+" mPid" +  mPid + " "  +mPackageName);
+        	//String packageName = getPackageNameForUid(mUid);
             if (mListener != null) {
                 try {
                     synchronized (this) {
                         // synchronize to ensure incrementPendingBroadcastsLocked()
                         // is called before decrementPendingBroadcasts()
-                        mListener.onLocationChanged(new Location(location));
-                        // call this after broadcasting so we do not increment
-                        // if we throw an exeption.
-                        incrementPendingBroadcastsLocked();
+                        //mListener.onLocationChanged(new Location(location));
+                    	Location loc = locationPrivacyManager.obfuscateLocation(location, packageName);
+                    	if(loc != null){
+                    		mListener.onLocationChanged(new Location(loc));
+                            // call this after broadcasting so we do not increment
+                            // if we throw an exeption.
+                            incrementPendingBroadcastsLocked();
+                    	}
+                        
                     }
                 } catch (RemoteException e) {
                     return false;
                 }
             } else {
                 Intent locationChanged = new Intent();
-                locationChanged.putExtra(LocationManager.KEY_LOCATION_CHANGED, new Location(location));
+                //locationChanged.putExtra(LocationManager.KEY_LOCATION_CHANGED, new Location(location));
+                Location loc = locationPrivacyManager.obfuscateLocation(location, packageName);
+            	if(loc != null){
+            		locationChanged.putExtra(LocationManager.KEY_LOCATION_CHANGED, new Location(loc));
+            	}
                 try {
                     synchronized (this) {
                         // synchronize to ensure incrementPendingBroadcastsLocked()
@@ -1140,6 +1184,19 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
         }
         return sanitizedRequest;
     }
+    
+    private String getPackageNameForUid(int uid) {
+        String[] packages = mPackageManager.getPackagesForUid(uid);
+        if (packages == null) {
+            throw new SecurityException("invalid UID " + uid);
+        }
+        //debug
+        //for (String pkg : packages) {
+        //    System.out.println("getPackageName: "+uid+" "+pkg);
+        //}
+        //end debug
+        return packages[0];
+    }
 
     private void checkPackageName(String packageName) {
         if (packageName == null) {
@@ -1294,6 +1351,7 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
         if (D) Log.d(TAG, "getLastLocation: " + request);
         if (request == null) request = DEFAULT_LOCATION_REQUEST;
         int allowedResolutionLevel = getCallerAllowedResolutionLevel();
+        int uid = getCallingUid();
         checkPackageName(packageName);
         checkResolutionLevelIsSufficientForProviderUse(allowedResolutionLevel,
                 request.getProvider());
@@ -1324,10 +1382,22 @@ public class LocationManagerService extends ILocationManager.Stub implements Run
                 if (allowedResolutionLevel < RESOLUTION_LEVEL_FINE) {
                     Location noGPSLocation = location.getExtraLocation(Location.EXTRA_NO_GPS_LOCATION);
                     if (noGPSLocation != null) {
-                        return new Location(mLocationFudger.getOrCreate(noGPSLocation));
+                    	//return new Location(mLocationFudger.getOrCreate(noGPSLocation));
+                    	Location loc = locationPrivacyManager.obfuscateLocation(mLocationFudger.getOrCreate(noGPSLocation) , packageName);
+                    	if(loc != null){
+                    		return new Location(loc);
+                    	} else {
+                    		return null;
+                    	}
                     }
                 } else {
-                    return new Location(location);
+                	//return new Location(location);
+                	Location loc = locationPrivacyManager.obfuscateLocation(location, packageName);
+                	if(loc != null){
+                		return new Location(loc);
+                	} else {
+                		return null;
+                	}
                 }
             }
             return null;

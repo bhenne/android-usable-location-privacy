@@ -66,6 +66,12 @@
     <uses-permission android:name="android.permission.CHANGE_PRIVACY_GUARD_STATE" />
 
     <permission
+        android:name="android.permission.START_LocationPrivacyDialog"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="android.permission.START_UserRecoverableAuth"
+        android:protectionLevel="signature" />
+    <permission
         android:name="android.permission.REQUEST_SUPERUSER"
         android:protectionLevel="signature" />
     <permission
@@ -1743,6 +1749,38 @@
                 <action android:name="android.provider.Contacts.PROFILE_CHANGED" />
             </intent-filter>
         </receiver>
+
+        <!-- Location Privacy -->
+        <activity android:name="com.android.settings.locationprivacy.LocationPrivacyDialog"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:label="@string/lp_dialog_title"
+            android:permission="android.permission.START_LocationPrivacyDialog"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" >
+        </activity>
+        <activity android:name="com.android.settings.locationprivacy.UserRecoverableAuth"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="@string/lp_dialog_title"
+            android:permission="android.permission.START_UserRecoverableAuth" >
+        </activity>
+
+        <service android:name="com.android.settings.locationprivacy.SendDataService" />
+
+        <activity android:name="com.android.settings.locationprivacy.LocationPrivacyOnlineInfoActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <activity android:name="com.android.settings.locationprivacy.LocationPrivacyMap"
+            android:label="@string/lp_mappicker_title"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

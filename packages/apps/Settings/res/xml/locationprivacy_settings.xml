@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="lp_settings"
+    android:title="@string/lp_app_title" >
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fragment="com.android.settings.locationprivacy.LocationPrivacyAdvancedSettings"
+        android:title="@string/lp_settings_advanced_settings" >
+    </PreferenceScreen>
+       <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fragment="com.android.settings.locationprivacy.LocationPrivacyStatisticOverview"
+        android:title="@string/lp_settings_statistic" >
+    </PreferenceScreen>
+
+    <PreferenceCategory android:title="@string/lp_settings_advanced_appcategory" >
+    </PreferenceCategory>
+
+</PreferenceScreen>

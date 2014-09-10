@@ -86,6 +86,7 @@ FRAMEWORKS_BASE_SUBDIRS := \
 	    core \
 	    graphics \
 	    location \
+	    locationprivacy \
 	    media \
 	    media/mca/effect \
 	    media/mca/filterfw \
